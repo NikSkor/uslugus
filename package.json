@@ -1,0 +1,20 @@
+{
+  "name": "uslugus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "set NODE_ENV=development&&webpack",
+    "build:prod": "set NODE_ENV=production&&webpack",
+    "start": "set NODE_ENV=development&&webpack server",
+    "clear": "rd /s /q dist"
+  },
+  "keywords": [],
+  "author": "Nikita Skorodumov",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
