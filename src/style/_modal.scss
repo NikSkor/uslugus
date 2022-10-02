@@ -1,3 +1,67 @@
 .modal {
   display: none;
+  position: fixed;
+  inset: 0; //заменяет top, bottom, right, left = 0
+  padding: 40px;
+  overflow-y: auto;
+  cursor: pointer;
+  background-color: rgba(#000, .6);
+  
+  &__title {
+      font-weight: 400;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+  // &_sign-in {
+  //     display: flex;
+  //   }
+
+    // &_sign-up {
+    //   display: flex;
+    // }
+
+  &_person {
+    display: flex;
+  }
+
+  &__body {
+    position: relative;
+    cursor: default;
+    margin: auto;
+    max-width: 768px;
+    width: 100%;
+    background-color: #F2F5FC;
+    border-radius: 12px;
+    padding: 24px 20px 48px;
+
+  }
+
+  &__container {
+    max-width: 632px;
+    width: 100%;
+    margin: auto;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #7B7B7B;
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color:#000;
+    }
+  }
 }
+
