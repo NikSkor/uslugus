@@ -66,11 +66,17 @@
   }
 
   &__contacts {
-    grid-column: span 2;
+    grid-area: contacts;
+    // grid-column: span 2;
     align-self: end;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    font-weight: 300;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__link {

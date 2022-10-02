@@ -19,6 +19,12 @@ $text: #000;
   }
 }
 
+@mixin mini {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
 // @mixin max-width($width) {
 //   @media (max-width: $width) {
 //     @content;

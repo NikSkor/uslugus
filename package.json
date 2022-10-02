@@ -12,15 +12,22 @@
   "keywords": [],
   "author": "Nikita Skorodumov",
   "license": "ISC",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
+    "add": "^2.0.6",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "group-css-media-queries-loader": "^4.3.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.6.1",
     "image-webpack-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^2.6.1",
     "normalize.css": "^8.0.1",
     "postcss": "^8.4.16",
     "postcss-loader": "^7.0.1",
