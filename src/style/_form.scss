@@ -75,9 +75,13 @@
     }
 
     &_price {
-      width: 105px;
+      min-width: 105px;
     }
   }
+
+  // &__option {
+  //   border-radius: 8px;
+  // }
 
   &__wrapper-review {
     // align-self: flex-end;

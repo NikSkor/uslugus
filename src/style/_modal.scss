@@ -6,6 +6,7 @@
   overflow-y: auto;
   cursor: pointer;
   background-color: rgba(#000, .6);
+  z-index: 999;
 
   @include tablet {
     padding: 20px;
@@ -31,9 +32,9 @@
   //   display: flex;
   // }
 
-  &_sign-up {
-    display: flex;
-  }
+  // &_sign-up {
+  //   display: flex;
+  // }
 
   // &_person {
   //   display: flex;
