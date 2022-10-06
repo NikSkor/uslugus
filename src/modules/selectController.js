@@ -1,3 +1,5 @@
+import {chosenCategory} from "./chosenCategory";
+
 export const selectController = ({
   openBtn,
   openBlock,
@@ -37,6 +39,7 @@ export const selectController = ({
     if (option) {
       closeSelectBlock();
       categoryTitle.innerHTML = option.textContent.trim();
+      chosenCategory(option.textContent.trim());
       data.value = option.dataset.value 
       ? option.dataset.value
       : option.textContent;

@@ -2,6 +2,7 @@ import './index.html';
 import './index.scss';
 import {avatarController} from './modules/avatarController';
 import {choicesController} from './modules/choicesController';
+import {renderCategory} from './modules/renderCategory';
 import {getCategory} from './modules/getCategory';
 import {modalController} from './modules/modalController';
 import {renderList} from './modules/renderList';
@@ -54,6 +55,8 @@ const init = () => {
       })
     }
   });
+  getCategory();
+  renderCategory();
 
   selectController({
     openBtn: '.category__title',
@@ -61,7 +64,7 @@ const init = () => {
     closeBtn: '.category__btn',
     changeBlock: '.category__title_text',
     handlerChange: (value) => {
-      console.log(value);
+      // console.log(value);
     },
   });
 
@@ -77,7 +80,7 @@ const init = () => {
     uploadResult: '.avatar__result',
   });
 
-  getCategory();
+  
   renderList();
   searchControl();
   // const modalPerson = modalController({
