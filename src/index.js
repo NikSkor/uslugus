@@ -1,5 +1,6 @@
 import './index.html';
 import './index.scss';
+import {avatarController} from './modules/avatarController';
 import {choicesController} from './modules/choicesController';
 import {modalController} from './modules/modalController';
 import {selectController} from './modules/selectController';
@@ -68,6 +69,10 @@ const init = () => {
   });
 
   choicesController();
+  const crp = avatarController({
+    inputFile: '.avatar__input',
+    uploadResult: '.avatar__result',
+  });
 
   // const modalPerson = modalController({
   //   modal: '.modal_person',
