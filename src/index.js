@@ -2,7 +2,9 @@ import './index.html';
 import './index.scss';
 import {avatarController} from './modules/avatarController';
 import {choicesController} from './modules/choicesController';
+import {getCategory} from './modules/getCategory';
 import {modalController} from './modules/modalController';
+import {renderList} from './modules/renderList';
 import {selectController} from './modules/selectController';
 import {showPassword} from './modules/showPassword';
 
@@ -74,6 +76,8 @@ const init = () => {
     uploadResult: '.avatar__result',
   });
 
+  getCategory();
+  renderList();
   // const modalPerson = modalController({
   //   modal: '.modal_person',
   //   btnOpen: '.service',
