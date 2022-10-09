@@ -9,6 +9,7 @@ import {renderList} from './modules/renderList';
 import {searchControl} from './modules/searchControl';
 import {selectController} from './modules/selectController';
 import {showPassword} from './modules/showPassword';
+import {ratingController} from './modules/ratingController';
 
 
 const init = () => {
@@ -83,6 +84,7 @@ const init = () => {
   
   renderList();
   searchControl();
+  ratingController();
   // const modalPerson = modalController({
   //   modal: '.modal_person',
   //   btnOpen: '.service',
