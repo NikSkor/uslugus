@@ -1,7 +1,12 @@
 import './index.html';
 import './index.scss';
+import {avatarController} from './modules/avatarController';
 import {choicesController} from './modules/choicesController';
+import {renderCategory} from './modules/renderCategory';
+import {getCategory} from './modules/getCategory';
 import {modalController} from './modules/modalController';
+import {renderList} from './modules/renderList';
+import {searchControl} from './modules/searchControl';
 import {selectController} from './modules/selectController';
 import {showPassword} from './modules/showPassword';
 
@@ -50,6 +55,8 @@ const init = () => {
       })
     }
   });
+  getCategory();
+  renderCategory();
 
   selectController({
     openBtn: '.category__title',
@@ -57,7 +64,7 @@ const init = () => {
     closeBtn: '.category__btn',
     changeBlock: '.category__title_text',
     handlerChange: (value) => {
-      console.log(value);
+      // console.log(value);
     },
   });
 
@@ -68,7 +75,14 @@ const init = () => {
   });
 
   choicesController();
+  const crp = avatarController({
+    inputFile: '.avatar__input',
+    uploadResult: '.avatar__result',
+  });
 
+  
+  renderList();
+  searchControl();
   // const modalPerson = modalController({
   //   modal: '.modal_person',
   //   btnOpen: '.service',

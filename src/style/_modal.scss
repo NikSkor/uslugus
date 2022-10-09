@@ -54,6 +54,11 @@
       padding: 24px 20px;
     }
 
+    @include mini {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
     &_person {
       @include mini {
         padding-bottom: 23px;
