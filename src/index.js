@@ -12,6 +12,7 @@ import {ratingController} from './modules/ratingController';
 import {signInController, signUpController} from './modules/sign';
 import {getData} from './modules/getData';
 import {API_URL} from './modules/const';
+import {renderModal} from './modules/renderModal';
 
 
 const init = () => {
@@ -32,10 +33,10 @@ const init = () => {
     btnOpen: '.service',
     parentBtns: '.services__list',
     btnClose: '.modal__close',
-    handlerOpenModal: async({handler}) => {
+    handlerOpenModal: async({handler, modalElem}) => {
       const data = await getData(`${API_URL}/api/service/${handler.dataset.id}`);
-      console.log(data);
-
+      // console.log(data);
+      renderModal(modalElem ,data);
       const comments = document.querySelectorAll('.review__text');
 
       comments.forEach((comment) => {
