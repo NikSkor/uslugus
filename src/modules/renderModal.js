@@ -5,7 +5,6 @@ import {directions} from "./const";
 import {createStars} from "./createStars";
 import {createReview} from "./createReview";
 import {ratingController} from "./ratingController";
-import {modalController} from "./modalController";
 
 export const renderModal = (parent, data) => {
 

@@ -8,7 +8,6 @@ import {renderList} from './modules/renderList';
 import {searchControl} from './modules/searchControl';
 import {selectController} from './modules/selectController';
 import {showPassword} from './modules/showPassword';
-import {ratingController} from './modules/ratingController';
 import {signInController, signUpController} from './modules/sign';
 import {getData} from './modules/getData';
 import {API_URL} from './modules/const';
