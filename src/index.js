@@ -15,7 +15,9 @@ import {API_URL} from './modules/const';
 import {renderModal} from './modules/renderModal';
 
 
-const init = () => {
+const init = async () => {
+  await getCategory();
+  renderList();
   const eventModalSignIn = modalController({
     modal: '.modal_sign-in',
     btnOpen: '.header__auth-btn_sign-in',
@@ -57,7 +59,7 @@ const init = () => {
       })
     }
   });
-  getCategory();
+
   renderCategory();
 
   selectController({
@@ -77,11 +79,8 @@ const init = () => {
   });
 
   choicesController();
-
-  
-  renderList();
   searchControl();
-  ratingController();
+  // ratingController();
 
   signUpController(eventModalSignUp.closeModal);
 
