@@ -5,8 +5,9 @@ import {directions} from "./const";
 import {createStars} from "./createStars";
 import {createReview} from "./createReview";
 import {ratingController} from "./ratingController";
+import {commentFormController} from "./commentFormConroller";
 
-export const renderModal = (parent, data) => {
+export const renderModal = (parent, data, closeModal) => {
 
   const telNumber = (data.phone.length > 10)
   ? `${data.phone.slice(0, 2)} (${data.phone.slice(2, 5)}) ${data.phone.slice(4, 7)}-${data.phone.slice(7, 9)}-${data.phone.slice(9)}`
@@ -15,7 +16,7 @@ export const renderModal = (parent, data) => {
 
   parent.textContent='';
 
-  console.log(data);
+  // console.log(data);
 
   const body = createElement('div', {
     className: 'modal__body modal__body_person'
@@ -138,6 +139,7 @@ export const renderModal = (parent, data) => {
   const formReview = createElement('form', {
     className: 'person__form form form_add-review',
   }, container);
+  formReview.dataset.id = data.id;
 
   const fieldset = createElement('fieldset', {
     className: 'form__fieldset form__fieldset_add-review',
@@ -153,7 +155,8 @@ export const renderModal = (parent, data) => {
   }, labelName);
 
   createElement('input', {
-    className: 'form__input'
+    className: 'form__input',
+    name: 'name',
   }, labelName);
 
   const labelPhone = createElement('label', {
@@ -166,7 +169,8 @@ export const renderModal = (parent, data) => {
   }, labelPhone);
 
   createElement('input', {
-    className: 'form__input'
+    className: 'form__input',
+    name: 'phone'
   }, labelPhone);
 
   const labelComment = createElement('label', {
@@ -179,7 +183,8 @@ export const renderModal = (parent, data) => {
   }, labelComment);
 
   createElement('textarea', {
-    className: 'form__textarea'
+    className: 'form__textarea',
+    name: 'text',
   }, labelComment);
 
   const wrapperSendReview = createElement('div', {
@@ -204,7 +209,7 @@ export const renderModal = (parent, data) => {
   const ratingInput = createElement('input', {
     className: 'rating__input',
     type: 'hidden',
-    name: 'rating'
+    name: 'stars'
   }, rating)
 
   ratingController(rating, ratingInput);
@@ -214,9 +219,9 @@ export const renderModal = (parent, data) => {
     textContent: 'Опубликовать отзыв'
   }, wrapperSendReview);
 
-  reviewBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-  })
+  // reviewBtn.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  // })
 
   const closeBtn = createElement('button', {
     className: 'modal__close',
@@ -228,6 +233,8 @@ export const renderModal = (parent, data) => {
       <path d="M18.75 18.75L5.25 5.25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   `;
+
+  commentFormController(formReview, closeModal);
 
 };
 

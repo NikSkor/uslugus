@@ -12,11 +12,12 @@ export const auth = (data) => {
 
   const headerAuth = document.querySelector('.header__auth');
   headerAuth.textContent = '';
+  headerAuth.classList.add('auth');
   const categoryRus = store.category.find(
     item => item.title === store.user.category
   ).rus;
 
-  headerAuth.classList.add('auth');
+  
 
   // headerAuth.innerHTML = 
   // `
@@ -65,7 +66,7 @@ export const auth = (data) => {
       form.email.value = data.email;
       form.price.value = data.price;
       form.about.value = data.about;
-      
+
       form.direction._choices.setChoiceByValue(data.direction);
       form.category._choices.setChoiceByValue(data.category);
 
