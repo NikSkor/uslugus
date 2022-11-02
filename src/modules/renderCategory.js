@@ -1,7 +1,6 @@
 import {createCategory} from "./createCategory";
 import {getCategory} from "./getCategory";
-import {renderList} from "./renderList";
-import {store} from "./store"
+
 
 export const renderCategory = async () => {
   const category = await getCategory();
@@ -15,7 +14,4 @@ export const renderCategory = async () => {
   
   categoryList.append(...categoryModal);
 
-  // const chosenCategory = document
-
-  // renderList(`${API_URL}/api/service?search=${}`)
 };

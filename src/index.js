@@ -34,10 +34,10 @@ const init = async () => {
     btnOpen: '.service',
     parentBtns: '.services__list',
     btnClose: '.modal__close',
-    handlerOpenModal: async({handler, modalElem}) => {
+    handlerOpenModal: async({handler, modalElem, closeModal}) => {
       const data = await getData(`${API_URL}/api/service/${handler.dataset.id}`);
       // console.log(data);
-      renderModal(modalElem ,data);
+      renderModal(modalElem, data, closeModal);
       const comments = document.querySelectorAll('.review__text');
 
       comments.forEach((comment) => {

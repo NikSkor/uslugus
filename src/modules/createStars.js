@@ -5,7 +5,7 @@ import starOSvg from '../img/star-o.svg';
 export const createStars = (commentOrStars) => {
   const stars = Array.isArray(commentOrStars) 
   ? Math.round(commentOrStars
-    .reduce((acc, item) => item.stars + acc, 0) / commentOrStars.length) || 0
+    .reduce((acc, item) => +item.stars + acc, 0) / commentOrStars.length) || 0
   : commentOrStars;
   
   const wrapper = document.createElement('div');
