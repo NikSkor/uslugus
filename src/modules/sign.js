@@ -60,9 +60,9 @@ export const signUpController = (callback) => {
 
     if (dataResponse.errors) {
       console.log(dataResponse.errors); //todo обработка ошибки
-      //! dataResponse.errors.forEach(error => {
-      //!   form[error.field].style.border = '1px solid red'; //убрать те которые нельзя обработать
-      //! })
+      // dataResponse.errors.forEach(error => {
+      // form[error.field].style.border = '1px solid red'; //убрать те которые нельзя обработать
+      // })
       return;
     }
 

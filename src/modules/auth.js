@@ -27,26 +27,43 @@ export const auth = (data) => {
   //   <button class='auth__btn-edit'>Изменить услугу</button>
   // `;
 
-  createElement('img', {
+  const avatar = createElement('img', {
     src: `${API_URL}/${store.user.avatar}`,
     className: 'auth__avatar',
     alt: `${categoryRus} ${store.user.name}`
   }, headerAuth);
 
-  createElement('p', {
+  const name = createElement('p', {
     className: 'auth__name',
     textContent: `${store.user.name}`
   }, headerAuth);
 
-  createElement('p', {
+  const category = createElement('p', {
     className: 'auth__category',
     textContent: `${categoryRus}`
   }, headerAuth);
 
-  createElement('button', {
+  const btnEdit = createElement('button', {
     className: 'auth__btn-edit',
     textContent: `Изменить услугу`
   }, headerAuth);
+
+  let windowInnerWidth = window.innerWidth;
+
+  window.addEventListener('resize', () => {
+    windowInnerWidth = window.innerWidth;
+  })
+
+  avatar.addEventListener('click', () => {
+      if (windowInnerWidth <= 520) {
+        console.log('mazda!!!');
+        headerAuth.classList.toggle('auth__modal');
+        name.classList.toggle('auth_block');
+        category.classList.toggle('auth_block');
+        btnEdit.classList.toggle('auth_block');
+      }
+  })
+
 
   modalController({
     modal: '.modal_sign-up',
