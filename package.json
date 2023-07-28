@@ -7,7 +7,7 @@
     "start": "webpack serve",
     "build-dev": "webpack",
     "build-prod": "webpack --node-env=production",
-    "clear": "rd /s /q dist"
+    "clear": "rd /s /q public"
   },
   "keywords": [],
   "author": "Nikita Skorodumov",
@@ -20,7 +20,6 @@
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
-    "add": "^2.0.6",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "group-css-media-queries-loader": "^4.3.0",
